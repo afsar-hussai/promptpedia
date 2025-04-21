@@ -1,8 +1,8 @@
 "use client"
-import { useSession } from '@node_modules/next-auth/react'
-import { usePathname, useRouter } from '@node_modules/next/navigation'
+import { useSession } from 'next-auth/react'
+import { usePathname, useRouter } from 'next/navigation'
 import React, { useState } from 'react'
-import Image from '@node_modules/next/image'
+import Image from 'next/image'
 
 const PromptCard = ({post , 
   handleTagClick , 

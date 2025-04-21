@@ -1,7 +1,7 @@
 "use client";
 import Profile from '@components/Profile';
-import { useSession } from '@node_modules/next-auth/react';
-import { useRouter } from '@node_modules/next/navigation';
+import { useSession } from 'next-auth/react';
+import { useRouter } from 'next/navigation';
 import React, { useEffect, useState } from 'react'
 
 const MyProfile = () => {
