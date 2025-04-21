@@ -1,36 +1,164 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 🧠 Promptpedia
 
-## Getting Started
+**Promptpedia** is a community-driven platform where users can share, explore, and manage creative ChatGPT prompts. Built with **Next.js** (React framework), it offers seamless Google authentication, robust prompt management, and a clean, responsive UI. Only logged-in users can create, edit, or delete their own prompts, ensuring secure and personalized content control.
 
-First, run the development server:
+---
 
+## ✨ Features
+
+- 🔐 Google Authentication using **NextAuth.js**
+- 🧾 Full **CRUD** operations on prompts
+- 👤 Logged-in users can only **edit/delete** their own prompts
+- 🌍 Public feed of all shared prompts
+- 🧠 MongoDB-based data storage
+- 📱 Mobile-responsive UI
+
+---
+
+## 🛠 Tech Stack
+
+- **Frontend & Backend:** [Next.js](https://nextjs.org/) (App Router)
+- **Authentication:** [NextAuth.js](https://next-auth.js.org/) with Google Provider
+- **Database:** [MongoDB](https://www.mongodb.com/)
+- **ODM:** [Mongoose](https://mongoosejs.com/)
+- **Styling:** Tailwind CSS *(if used)*
+
+---
+
+## 📦 Getting Started
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/afsar-hussai/promptpedia.git
+cd promptpedia
+```
+
+### 2. Install Dependencies
+
+```bash
+npm install
+# or
+yarn install
+
+```
+### 3. Setup Environment Variables
+
+```bash
+GOOGLE_ID=your_google_client_id
+GOOGLE_CLIENT_SECRET=your_google_client_secret
+MONGODB_URI=your_mongodb_connection_string
+
+NEXTAUTH_URL=http://localhost:3000
+NEXTAUTH_URL_INTERNAL=http://localhost:3000
+NEXTAUTH_SECRET=your_nextauth_secret
+```
+### Generate a secure NEXTAUTH_SECRET:
+```bash
+openssl rand -base64 32
+```
+### 4. Run the Development Server
 ```bash
 npm run dev
 # or
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
+
 ```
+## 🔐 Authentication & Authorization
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- Uses NextAuth.js for secure session management.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+- Only authenticated users can:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- Create new prompts
 
-## Learn More
+- Edit or delete their own prompts
 
-To learn more about Next.js, take a look at the following resources:
+- Unauthorized access to edit/delete routes is restricted on both client & server.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🧠 How It Works
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. User logs in via Google
 
-## Deploy on Vercel
+2. A user record is created in MongoDB (if new)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+3. User can now:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Create new prompts
+
+- View all public prompts
+
+- Edit or delete only their own prompts
+
+4. All data is fetched from and saved to MongoDB
+
+## 🧰 Utilities Used
+
+- mongoose: For schema modeling and MongoDB connection
+
+- next-auth: For auth and session handling
+
+- tailwindcss: (optional) For responsive UI design
+
+## 📸 Screenshots
+
+![Home Page](./public/assets/images/image.png)
+![Home Page view 2](./public/assets/images/image3.png)
+![Create Post](./public/assets/images/image2.png)
+![My Profile](./public/assets/images/image4.png)
+![Other User Profiles Profile](./public/assets/images/image5.png)
+
+
+## 📈 Future Improvements
+- 🔍 Full-text prompt search
+
+- 🏷️ Tags and categories for better filtering
+
+- ❤️ Like/bookmark functionality
+
+- 📊 Analytics for prompt authors
+
+- 🌙 Dark mode
+
+## 🧪 Testing
+
+Manual testing by:
+
+- Creating/deleting/editing prompts as logged-in user
+
+- Ensuring unauthorized users cannot access protected actions
+
+- Testing API endpoints using tools like Postman
+
+## 🚀 Deployment
+
+You can deploy Promptpedia easily using platforms like Vercel (recommended for Next.js apps).
+
+Steps:
+
+1. Push your code to GitHub
+
+2. Import the repo into Vercel
+
+3. Add environment variables in Vercel dashboard
+
+4. Deploy!
+
+## 🙌 Contributing
+Contributions are welcome! Here's how you can help:
+
+- Open issues for bugs or suggestions
+
+- Fork the repo and submit a Pull Request
+
+- Star 🌟 the project to show support
+
+## 👨‍💻 Author
+Mohd Afsar Hussain
+Full Stack Developer | MERN | AI/ML Enthusiast
+
+💻 GitHub: @afsar-hussai
+
+🔗 [Connect on LinkedIn](https://www.linkedin.com/in/mohdafsarhussain)
+
+**Made with ❤️ using Next.js, MongoDB, and the power of prompts!**
