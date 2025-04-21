@@ -1,7 +1,7 @@
 "use client";
 import Profile from '@components/Profile';
 
-import { useSearchParams } from '@node_modules/next/navigation';
+import { useSearchParams } from 'next/navigation';
 import React, { useEffect, useState, use } from 'react'
 
 const OthersProfile = ({ params }) => {
